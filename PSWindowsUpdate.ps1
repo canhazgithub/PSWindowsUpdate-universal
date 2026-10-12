@@ -67,7 +67,7 @@ Install-WindowsUpdate -AcceptAll -IgnoreReboot
 # Register-PSRepository -Default
 # Un-REM line below to determine if PS Repository is working
 # Get-PSRepository
- if (Get-WURebootStatus) { Write-Host "REBOOT REQUIRED for updates to complete!" -ForegroundColor Red } else { Write-Host "No reboot needed." -ForegroundColor Green } 
+ if (Get-WURebootStatus -Silent) { Write-Host "REBOOT REQUIRED for updates to complete!" -ForegroundColor Red } else { Write-Host "No reboot needed." -ForegroundColor Green } 
  
 # choco
-choco upgrade all
+choco upgrade all -y
